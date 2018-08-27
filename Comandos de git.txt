@@ -1,0 +1,6 @@
+Primer caso:
+Cuando trabajo de forma local
+git init
+Segundo caso:
+Cuando trabajo con un repositorio web
+git clone repositorio
