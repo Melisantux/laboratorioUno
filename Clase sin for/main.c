@@ -2,7 +2,7 @@
 /*  retorna  recibe
         0       0   void nombreDeLaFuncion(void) ó () <--- si uso () asume que recibe enteros.
         0       1   void nombreDeLaFuncion(tipo de dato que recibe)
-        1       0
+        1       0   tipoDeVariable nombreDeLaFuncion(void)
         1       1
 */
 
