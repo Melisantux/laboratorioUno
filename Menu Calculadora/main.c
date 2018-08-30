@@ -9,6 +9,8 @@ float operacionSuma(float primerOperando, float segundoOperando);
 float operacionResta(float primerOperando, float segundoOperando);
 float operacionDivision(float primerOperando, float segundoOperando);
 float operacionMultiplicacion (float primerOperando, float segundoOperando);
+int operacionFactorialUno (float primerOperando);
+int operacionFactorialDos (float segundoOperando);
 
 int main()
 {
@@ -24,10 +26,14 @@ int main()
     int banderaResta=0;
     int banderaMultiplicacion=0;
     int banderaDivision=0;
-    //int banderaFactorial=0;
+    int banderaFactorialUno=0;
+    int banderaFactorialDos=0;
     float multiplicacion;
     float division;
-    //int factorial;
+    int factorialUno;
+    int factorialDos;
+    int enteroUno;
+    int enteroDos;
 
     do
     {
@@ -35,20 +41,20 @@ int main()
 
         if (banderaPrimerOperando == 0)
         {
-            printf("\n1)Ingresar el primer operando.\n");
+            printf("\n1)Ingresar el primer operando: (A)\n");
         }
         else
         {
-            printf("\n1)Ingresar el primer operando: %0.3f\n", primerOperando);
+            printf("\n1)Ingresar el primer operando: (%0.3f)\n", primerOperando);
         }
 
         if (banderaSegundoOperando == 0)
         {
-            printf("2)Ingresar el segundo operando.\n");
+            printf("2)Ingresar el segundo operando: (B)\n");
         }
         else
         {
-            printf("2)Ingresar el segundo operando: %0.3f\n", segundoOperando);
+            printf("2)Ingresar el segundo operando: (%0.3f)\n", segundoOperando);
         }
         printf("3)Realizar operaciones.\n");
         printf("4)Informar resultados.\n");
@@ -73,11 +79,11 @@ int main()
         case 3:
             printf("_____________________________________________\n");
 
-            printf("\n1)Calcular la suma.\n");
-            printf("2)Calcular la resta.\n");
-            printf("3)Calcular la division.\n");
-            printf("4)Calcular la multiplicacion.\n");
-            printf("5)Calcular el factorial.");
+            printf("\n1)Calcular la suma (A+B).\n");
+            printf("2)Calcular la resta (A-B).\n");
+            printf("3)Calcular la division (A/B).\n");
+            printf("4)Calcular la multiplicacion (A*B).\n");
+            printf("5)Calcular el factorial(A! y B!)");
 
             printf("\n_____________________________________________\n");
 
@@ -100,11 +106,21 @@ int main()
             case 4:
                 multiplicacion=operacionMultiplicacion(primerOperando, segundoOperando);
                 banderaMultiplicacion=1;
+                break;
+            case 5:
+                factorialUno = operacionFactorialUno(primerOperando);
+                banderaFactorialUno=1;
+                factorialDos = operacionFactorialDos(segundoOperando);
+                banderaFactorialDos=1;
+                break;
             }
 
             system("cls");
             break;
         case 4:
+             enteroUno=primerOperando;
+             enteroDos=segundoOperando;
+
             if (banderaSuma == 1)
             {
                 printf("\n_____________________________________________\n");
@@ -129,7 +145,8 @@ int main()
                 printf("/%0.3f", segundoOperando);
                 printf(" es: %0.3f", division);
                 printf("\n_____________________________________________\n");
-            } else
+            }
+            else
             {
                 if (segundoOperando == 0)
                 {
@@ -146,6 +163,23 @@ int main()
                 printf(" es: %0.3f", multiplicacion);
                 printf("\n_____________________________________________\n");
             }
+            if (banderaFactorialUno == 1 && enteroUno==primerOperando && primerOperando >=0)
+            {
+                printf("\n_____________________________________________\n");
+                printf("\nEl factorial de A es: %d", factorialUno);
+            } else
+            {
+                printf("\n_____________________________________________\n");
+                printf("\nA no tiene factorial porque no es un numero entero positivo.");
+            }
+            if (banderaFactorialDos == 1 && enteroDos==segundoOperando && segundoOperando >=0)
+            {
+                printf(" y el factorial de B es: %d", factorialDos);
+                printf("\n_____________________________________________\n");
+            } else
+            {
+                printf(" y B no tiene factorial porque no es un numero entero positivo.");
+            }
         }
     }
     while (opcion >= 1 && opcion <5);
@@ -158,7 +192,6 @@ int seleccionDeOpcion(void)
     int opcion;
 
     printf("\nIngrese una opcion: ");
-    fflush(stdin);
     scanf("%d", &opcion);
 
     return opcion;
@@ -225,4 +258,54 @@ float operacionMultiplicacion(float primerOperando, float segundoOperando)
     multiplicacion= primerOperando * segundoOperando;
 
     return multiplicacion;
+}
+
+int operacionFactorialUno(float primerOperando)
+{
+    int enteroUno;
+    int factorialUno=1;
+
+    enteroUno=primerOperando;
+    if (enteroUno == primerOperando && primerOperando == 0)
+    {
+        factorialUno = 1;
+    } else
+    {
+        if (enteroUno == primerOperando && primerOperando > 0)
+        {
+            do
+        {
+            factorialUno= factorialUno * enteroUno;
+            enteroUno--;
+        }
+        while (enteroUno > 1);
+        }
+    }
+
+    return factorialUno;
+}
+
+int operacionFactorialDos(float segundoOperando)
+{
+    int enteroDos;
+    int factorialDos=1;
+
+    enteroDos=segundoOperando;
+    if (enteroDos == segundoOperando && segundoOperando == 0)
+    {
+        factorialDos = 1;
+    } else
+    {
+        if (enteroDos == segundoOperando && segundoOperando > 0)
+        {
+            do
+        {
+            factorialDos= factorialDos * enteroDos;
+            enteroDos--;
+        }
+        while (enteroDos > 1);
+        }
+    }
+
+    return factorialDos;
 }
