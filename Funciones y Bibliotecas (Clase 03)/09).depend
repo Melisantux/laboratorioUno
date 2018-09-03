@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1535980567 source:d:\09)\funciones y bibliotecas (clase 03\main.c
+	<stdio.h>
+	<stdlib.h>
+	"Biblioteca.h"
+
+1535980567 d:\09)\funciones y bibliotecas (clase 03\biblioteca.h
+
+1535984855 source:c:\users\alumno\desktop\laboratoriouno\funciones y bibliotecas (clase 03)\biblioteca.c
+	"Biblioteca.h"
+	<stdio.h>
+
+1535984855 c:\users\alumno\desktop\laboratoriouno\funciones y bibliotecas (clase 03)\biblioteca.h
+
