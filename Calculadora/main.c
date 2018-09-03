@@ -69,11 +69,13 @@ int main()
         case 1:
             primerOperando=ingresoPrimerOperando();
             banderaPrimerOperando=1;
+            enteroUno=primerOperando;
             system("cls");
             break;
         case 2:
             segundoOperando=ingresoSegundoOperando();
             banderaSegundoOperando=1;
+            enteroDos=segundoOperando;
             system("cls");
             break;
         case 3:
@@ -108,18 +110,30 @@ int main()
                 banderaMultiplicacion=1;
                 break;
             case 5:
-                factorialUno = operacionFactorialUno(primerOperando);
-                banderaFactorialUno=1;
-                factorialDos = operacionFactorialDos(segundoOperando);
-                banderaFactorialDos=1;
+                if (banderaPrimerOperando == 1 && primerOperando == enteroUno && primerOperando >=0 )
+                {
+                    factorialUno = operacionFactorialUno(primerOperando);
+                    banderaFactorialUno=1;
+                }
+                if (banderaSegundoOperando == 1 && segundoOperando == enteroDos && segundoOperando >=0)
+                {
+                    factorialDos = operacionFactorialDos(segundoOperando);
+                    banderaFactorialDos=1;
+                }
                 break;
+            default:
+                printf("Error. Ingrese una opcion valida.\n");
+                seleccionOperacion();
             }
 
             system("cls");
             break;
         case 4:
-             enteroUno=primerOperando;
-             enteroDos=segundoOperando;
+            while (banderaPrimerOperando == 0 && banderaSegundoOperando == 0)
+            {
+                printf("Error. Ingrese un operando.");
+                break;
+            }
 
             if (banderaSuma == 1)
             {
@@ -159,30 +173,42 @@ int main()
             {
                 printf("\n_____________________________________________\n");
                 printf("\nEl resultado de %0.3f", primerOperando);
-                printf("* %0.3f", segundoOperando);
+                printf(" * %0.3f", segundoOperando);
                 printf(" es: %0.3f", multiplicacion);
                 printf("\n_____________________________________________\n");
             }
-            if (banderaFactorialUno == 1 && enteroUno==primerOperando && primerOperando >=0)
+            if (banderaFactorialUno == 1) //&& enteroUno==primerOperando && primerOperando >=0)
             {
                 printf("\n_____________________________________________\n");
-                printf("\nEl factorial de A es: %d", factorialUno);
-            } else
-            {
-                printf("\n_____________________________________________\n");
-                printf("\nA no tiene factorial porque no es un numero entero positivo.");
+                printf("\nEl factorial de %0.3f", primerOperando);
+                printf(" es: %d", factorialUno);
             }
-            if (banderaFactorialDos == 1 && enteroDos==segundoOperando && segundoOperando >=0)
+            else
             {
-                printf(" y el factorial de B es: %d", factorialDos);
                 printf("\n_____________________________________________\n");
-            } else
-            {
-                printf(" y B no tiene factorial porque no es un numero entero positivo.");
+                printf("\n%0.3f", primerOperando);
+                printf(" no tiene factorial porque no es un numero entero positivo.");
             }
+            if (banderaFactorialDos == 1)// && //enteroDos==segundoOperando && segundoOperando >=0)
+            {
+                printf("\nEl factorial de %0.3f", segundoOperando);
+                printf(" es: %d", factorialDos);
+                printf("\n_____________________________________________\n");
+            }
+            else
+            {
+                printf("\n%0.3f", segundoOperando);
+                printf(" no tiene factorial porque no es un numero entero positivo.");
+                printf("\n_____________________________________________\n");
+            }
+            break;
+        case 5:
+            break;
+        default:
+            printf("Ingrese una opcion valida.\n");
         }
     }
-    while (opcion >= 1 && opcion <5);
+    while (opcion !=5);
 
     return 0;
 }
@@ -269,16 +295,17 @@ int operacionFactorialUno(float primerOperando)
     if (enteroUno == primerOperando && primerOperando == 0)
     {
         factorialUno = 1;
-    } else
+    }
+    else
     {
         if (enteroUno == primerOperando && primerOperando > 0)
         {
             do
-        {
-            factorialUno= factorialUno * enteroUno;
-            enteroUno--;
-        }
-        while (enteroUno > 1);
+            {
+                factorialUno= factorialUno * enteroUno;
+                enteroUno--;
+            }
+            while (enteroUno > 1);
         }
     }
 
@@ -294,16 +321,17 @@ int operacionFactorialDos(float segundoOperando)
     if (enteroDos == segundoOperando && segundoOperando == 0)
     {
         factorialDos = 1;
-    } else
+    }
+    else
     {
         if (enteroDos == segundoOperando && segundoOperando > 0)
         {
             do
-        {
-            factorialDos= factorialDos * enteroDos;
-            enteroDos--;
-        }
-        while (enteroDos > 1);
+            {
+                factorialDos= factorialDos * enteroDos;
+                enteroDos--;
+            }
+            while (enteroDos > 1);
         }
     }
 
