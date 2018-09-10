@@ -5,6 +5,9 @@
 //fflush(stdin); //Para estructuras repetititas. Tambièn se puede ponerlo por las dudas.
 // stricmp: cumple la misma función que strcmp pero no es case sensitive (no distingue mayusculas de minusculas).
 //Funciones vistas: strcmp, stricmp, strcopy, gets, strlen.
+// strupr: equivalente a toLocaleUpperCase.
+// strlwr: equivalente a toLocaleLowerCase.
+//puts: equivalente al gets. No permite darle formato. Tiene un salto de linea.
 
 int main()
 {
@@ -17,6 +20,9 @@ int main()
                                         //está alfabeticametne después que la segunda cadena. Si da -1 la primer cadena
                                         //está alfabéticamente antes que la segunda cadena.
 
+    strupr(cadenaDos);
+
+    puts(cadenaDos);
     //strcpy(cadena, cadenaDos);
     //cantidad = strlen(cadena);
     //gets(cadena);
