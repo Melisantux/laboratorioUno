@@ -11,7 +11,7 @@
 
 int main()
 {
-    char cadena[20];
+    char cadena[20]= "perro";
     char cadenaDos[50] = "gato";
     int estado;
 
@@ -21,11 +21,21 @@ int main()
 
     strupr(cadenaDos);
 
-    puts(cadenaDos);
     //strcpy(cadena, cadenaDos);
     //cantidad = strlen(cadena);
     //gets(cadena);
     printf("%d", estado);
 
+    strcat(cadenaDos, cadena);
+    puts(cadenaDos);
+
     return 0;
 }
+
+/*
+Tarea: Nombre, apellido (20 caracteres c/u, validandolo)y apellidoYNombre (3 variables de cadenas). (No tocar Nombre, Apellido,
+solo puedo modificar el formato de la variable apellidoYNombre).
+Ejemplo: Nombre: Juan Carlos.
+         Apellido: Gomez.
+         apellidoYNombre: Gomez, Juan Carlos. (Debe mostrarse con este formato, incluyendo la coma).
+ */
