@@ -6,18 +6,18 @@ void ingresarNombreVerificado (char [],int);
 void ingresarApellidoVerificado (char[], int);
 void verificarMayusculas (char[], int);
 void concatenarCadenas (char nombreYApellido [], char nombre[], char apellido[]);
-void agregarMayusculas (char nombreYApellido[], int cantidad);
 
 int main()
 {
     char nombre[20];
     char apellido[20];
-    char nombreYApellido[43];
+    char nombreYApellido[41];
 
     ingresarNombreVerificado(nombre, 20);
     ingresarApellidoVerificado(apellido, 20);
     concatenarCadenas(nombreYApellido, nombre, apellido);
-    agregarMayusculas(nombreYApellido, 43);
+    printf("%s", nombreYApellido);
+    //agregarMayusculas(nombreYApellido, 43);
 
     return 0;
 }
@@ -79,9 +79,11 @@ void concatenarCadenas (char nombreYApellido [], char nombre[], char apellido[])
     {
         nombreYApellido[i+j] = nombre[j];
     }
+
+    nombreYApellido[i+j] = '\0';
 }
 
-void agregarMayusculas(char vector [], int cantidad)
+/* void verificarMayusculas(char vector [], int cantidad)
 {
     int i;
 
@@ -120,3 +122,4 @@ void agregarMayusculas(char vector [], int cantidad)
     printf("%s", vector);
     }
 }
+*/
