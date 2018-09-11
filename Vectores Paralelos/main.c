@@ -5,6 +5,15 @@
 void cargarAlumnos(int[], char[][21], int[], float[], int);
 //crear funcion mostrarAlumnos.
 //Rehacer de cero.
+//Agregar funciones para: ordenar los nombres alfabeticamente, una que muestre los alumnos aprobados(nota>6),
+// una que muestre los alumnos que se llaman Juan, una que muestre los alumnos cuyo nombre comienzan con P.
+// una que diga el alumno con mas nota (sabiendo que puede ser màs de uno). El mas mediocre (legajo=100, nota=5
+// nombre=pepe y altura=1.75.
+// Ingresar un legajo y permitir la modificacion de la nota (hacer una funcion que permita buscar el legajo y modificar
+//la nota.
+//Transformar la carga de datos en una carga aleatoria. (Inicializar todos los legajos en -1).
+// Poner todo en un menù de opciones.
+
 
 int main()
 {
