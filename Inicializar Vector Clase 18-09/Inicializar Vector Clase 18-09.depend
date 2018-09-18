@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1537275531 source:c:\users\alumno\desktop\inicializar vector clase 18-09\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+

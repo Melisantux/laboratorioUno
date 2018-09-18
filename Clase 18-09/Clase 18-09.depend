@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1537273197 source:c:\users\alumno\desktop\clase 18-09\alumno.c
+	<stdio.h>
+	<string.h>
+	"Alumno.h"
+
+1537273197 c:\users\alumno\desktop\clase 18-09\alumno.h
+
