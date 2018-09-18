@@ -4,6 +4,9 @@
 #include <ctype.h>
 #define T 6
 
+//Agregar una opcion de estado para chequear si el lugar esta ocupado o no.
+// Agregar tambien lo de buscar y modificar un dato.
+
 /** \brief busca espacio disponible.
  *
  * \param int[] listado de enteros.
@@ -16,10 +19,6 @@ int buscarLibre(int[], int, int);
 
 int main()
 {
-    //Crear vector de enteros.
-    //inicializarlo a -1.
-    //do-while pidiendo datos.
-
     int vector[T];
     int i;
     char pregunta;
